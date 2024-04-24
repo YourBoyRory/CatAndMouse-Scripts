@@ -5,19 +5,19 @@ function say {
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
-        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null
+        xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
     espeak --stdout -z "$1" | paplay 2>/dev/null
     sleep .5
 }
 export -f say
 
-# say $message
+# sayEnd $message
 function sayEnd {
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
-        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null
+        xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
     espeak --stdout "$1" | paplay 2>/dev/null
     sleep 1.5
