@@ -5,7 +5,7 @@ function say {
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
-        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null 
+        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
     espeak --stdout -z "$1" | paplay 2>/dev/null
     sleep .5
@@ -17,12 +17,12 @@ function sayEnd {
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
-        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null 
+        xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
     espeak --stdout "$1" | paplay 2>/dev/null
     sleep 1.5
 }
-export -f say
+export -f sayEnd
 
 # testHash $input $hash
 function testHash {
@@ -45,10 +45,10 @@ function promtPassword {
     fi
     testHash "$pass" "$1"
 }
-export -f promt
+export -f promtPassword
 
 # play $sound
 function playSound {
-    paplay "$1" 2>/dev/null 
+    paplay "$1" 2>/dev/null
 }
 export -f playSound
