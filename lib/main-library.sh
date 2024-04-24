@@ -2,7 +2,8 @@
 
 # say $message
 function say {
-    echo "$1"
+    clear
+    cowsay "$1"
     (
         #killall xcowsay 2>/dev/null
         xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
@@ -14,7 +15,8 @@ export -f say
 
 # sayEnd $message
 function sayEnd {
-    echo "$1"
+    clear
+    cowsay "$1"
     (
         #killall xcowsay 2>/dev/null
         xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
@@ -38,7 +40,7 @@ export -f testHash
 # promt $hash
 function promtPassword {
     if xset q &>/dev/null; then
-        local pass=$(yad --text="$1" --entry --button=Done)
+        local pass=$(yad --title="Puzzle" --text="$1" --entry --button=Done)
     else
         echo "$1"
         read -p "Enter Password: " pass

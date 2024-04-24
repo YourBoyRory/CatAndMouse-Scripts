@@ -3,6 +3,7 @@
 source "../lib/main-library.sh"
 
 say "Hello Cybertern."
+say "I am the MadCow."
 say "I'd like to play a game."
 say "A game that will test your wits, and your endurance..."
 say "Your first test will not be easy."
