@@ -16,6 +16,6 @@ done
 
 say "Excelent Work Cybertern!"
 sleep .5
-say "I WOULD say that..."
+say "Is what I WOULD say..."
 (sleep 2.8; playSound "../assets/boom.wav")&
 sayEnd "If my grandma hadn't solved it 5 times faster."
