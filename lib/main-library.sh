@@ -36,7 +36,7 @@ function testHash {
 export -f testHash
 
 # promt $hash
-function promt {
+function promtPassword {
     if xset q &>/dev/null; then
         local pass=$(yad --text="$1" --entry --button=Done)
     else
