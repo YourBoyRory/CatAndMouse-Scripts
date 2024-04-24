@@ -10,7 +10,7 @@ say "Your first test will not be easy."
 sayEnd "You may want to ask your friend John..."
 
 
-while promt "83218ac34c1834c26781fe4bde918ee4"; do
+while promtPassword "83218ac34c1834c26781fe4bde918ee4"; do
     sayEnd "That wasn't quite right."
 done
 
