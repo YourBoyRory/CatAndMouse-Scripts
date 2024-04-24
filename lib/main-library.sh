@@ -34,3 +34,9 @@ function promt {
     testHash "$pass" "$1"
 }
 export -f promt
+
+# play $sound
+function playSound {
+    play "$1" 2>/dev/null 
+}
+export -f playSound
