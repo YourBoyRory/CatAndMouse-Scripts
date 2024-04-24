@@ -2,13 +2,13 @@
 
 # say $message
 function say {
-    sleep .5
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
         xcowsay --reading-speed=100 --at=25,25 "$1" 2>/dev/null 
     )&
     espeak --stdout -z "$1" | paplay 2>/dev/null
+    sleep .5
 }
 export -f say
 
