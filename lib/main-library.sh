@@ -37,7 +37,7 @@ function testHash {
 }
 export -f testHash
 
-# prompt $hash
+# prompt $hash $prompt*
 function prompt {
     echo $input
     text=$2
