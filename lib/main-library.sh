@@ -37,17 +37,24 @@ function testHash {
 }
 export -f testHash
 
-# promt $hash
-function promtPassword {
-    if xset q &>/dev/null; then
-        local pass=$(yad --title="Puzzle" --text="$1" --entry --button=Done)
-    else
-        echo "$1"
-        read -p "Enter Password: " pass
+# prompt $hash
+function prompt {
+    echo $input
+    text=$2
+    if [[ "$text" == "" ]]; then
+        text=$1
     fi
+    if xset q &>/dev/null; then
+        local pass=$(yad --title="Puzzle" --text="$text" --entry --button=Done)
+    else
+        echo "$text"
+        read -p "Enter Answer: " pass
+    fi
+    pass=$(echo ${pass,,} | awk '{ gsub(/[[:space:]]/, ""); print }')
+    echo $pass
     testHash "$pass" "$1"
 }
-export -f promtPassword
+export -f prompt
 
 # play $sound
 function playSound {
