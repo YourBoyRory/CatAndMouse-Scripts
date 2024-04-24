@@ -14,5 +14,6 @@ done
 
 say "Excelent Work Cybertern"
 say "I would say that..."
+(sleep 2.8; playSound "../assets/boom.wav")&
 say "If my grandma hadn't solved it 5 times faster."
 
