@@ -2,13 +2,13 @@
 
 # say $message
 function say {
-    sleep 1
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
-        xcowsay --at=25,25 "$1" 2>/dev/null 
+        xcowsay --reading-speed=500 --at=25,25 "$1" 2>/dev/null 
     )&
-    espeak "$1" 2>/dev/null
+    espeak --stdout -z "$1" | paplay 2>/dev/null
+    sleep 1
 }
 export -f say
 
@@ -37,6 +37,6 @@ export -f promt
 
 # play $sound
 function playSound {
-    play "$1" 2>/dev/null 
+    paplay "$1" 2>/dev/null 
 }
 export -f playSound
