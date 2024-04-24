@@ -2,13 +2,13 @@
 
 # say $message
 function say {
+    sleep 1
     echo "$1"
     (
         #killall xcowsay 2>/dev/null
         xcowsay --at=25,25 "$1" 2>/dev/null 
     )&
     espeak "$1" 2>/dev/null
-    sleep 1
 }
 export -f say
 
