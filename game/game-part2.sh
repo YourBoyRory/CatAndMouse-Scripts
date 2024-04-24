@@ -11,10 +11,9 @@ say "Your first test will not be easy."
 sayEnd "You may want to ask your friend John..."
 
 
-while prompt "83218ac34c1834c26781fe4bde918ee4"; do
+while prompt "40be4e59b9a2a2b5dffb918c0e86b3d7"; do
     say "That wasn't quite right."
     sayEnd "You may want to ask your friend John..."
-    echo done
 done
 
 say "Excelent Work Cybertern!"
@@ -22,3 +21,12 @@ sleep .5
 say "Is what I WOULD say..."
 (sleep 2.8; playSound "../assets/boom.wav")&
 sayEnd "If my grandma hadn't solved it 5 times faster."
+
+say "Maybe I should give you something easier."
+say "Surly you can handle some basic mathematics."
+sayEnd "What is 32 times 16?"
+
+while prompt "10a7cdd970fe135cf4f7bb55c0e3b59f" "32*16"; do
+    sayEnd "That wasn't quite right."
+done
+say "Ah, One of my favorite numbers!"
