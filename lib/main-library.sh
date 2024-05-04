@@ -8,7 +8,7 @@ function say {
         #killall xcowsay 2>/dev/null
         xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
-    espeak --stdout -z "$1" | paplay 2>/dev/null
+    espeak --stdout -z "$1" | aplay 2>/dev/null
     sleep .5
 }
 export -f say
@@ -21,7 +21,7 @@ function sayEnd {
         #killall xcowsay 2>/dev/null
         xcowsay --monitor=0 --reading-speed=100 --at=25,25 "$1" 2>/dev/null
     )&
-    espeak --stdout "$1" | paplay 2>/dev/null
+    espeak --stdout "$1" | aplay 2>/dev/null
     sleep 1.5
 }
 export -f sayEnd
@@ -58,6 +58,6 @@ export -f prompt
 
 # play $sound
 function playSound {
-    paplay "$1" 2>/dev/null
+    aplay "$1" 2>/dev/null
 }
 export -f playSound
