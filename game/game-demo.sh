@@ -48,8 +48,3 @@ while prompt "ca8a2087e5557e317599344687a57391" "d562bcef9dae0c409238ca1b22affab
     say "You must go deeper."
 done
 sayEnd "Perfect."
-
-
-
-testHash "$pass" "$1"
-return testHash "$pass" "$1"
