@@ -53,6 +53,7 @@ function prompt {
     pass=$(echo ${pass,,} | awk '{ gsub(/[[:space:]]/, ""); print }')
     echo $pass
     testHash "$pass" "$1"
+    return $?
 }
 export -f prompt
 
